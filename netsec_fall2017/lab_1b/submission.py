@@ -84,7 +84,7 @@ def basicUnitTest():
         elif isinstance(pkt, Decodepackage): print('decode color')
         elif isinstance(pkt, Resultpackage): print('pass fail')
         else: print("none")
-
+# i = 0
 if __name__ == "__main__":
     basicUnitTest()
 
