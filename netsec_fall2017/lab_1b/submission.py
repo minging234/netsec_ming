@@ -67,6 +67,7 @@ def basicUnitTest():
     if packet4a == packet4 :
         print("these two Resultpackage are same")
 <<<<<<< HEAD
+<<<<<<< HEAD
     else:
         print("wrong")
     
@@ -82,6 +83,11 @@ def basicUnitTest():
 # i = 0
 if __name__ == "__main__":
     basicUnitTest()
+=======
+
+
+basicUnitTest()
+>>>>>>> parent of 23aa43a... v3
 =======
 
 
