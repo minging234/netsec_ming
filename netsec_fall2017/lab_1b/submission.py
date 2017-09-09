@@ -40,6 +40,8 @@ def basicUnitTest():
     packet1a = RequestColorpackage.Deserialize(packet1Bytes)
     if packet1 == packet1a:
         print("these two RequestColorpackage are same")
+    else:
+        print('wrong')
     
     packet2 = ColorCodepackage()
     packet2.ID = 1
@@ -48,6 +50,8 @@ def basicUnitTest():
     packet2a = ColorCodepackage.Deserialize(packet2Bytes)
     if packet2 == packet2a:
         print("these two ColorCodepackage are same")
+    else:
+        print('wrong')
     
     packet3 = Decodepackage()
     packet3.ID = 1
@@ -57,7 +61,9 @@ def basicUnitTest():
     packet3Bytes = packet3.__serialize__()
     packet3a = Decodepackage.Deserialize(packet3Bytes)
     if packet3 == packet3a :
-        print("these two ColorCodepackage are same")
+        print("these two Decodepackage are same")
+    else:
+        print('wrong')
     
     packet4 = Resultpackage()
     packet4.ID = 3
@@ -66,8 +72,6 @@ def basicUnitTest():
     packet4a = Resultpackage.Deserialize(packet4Bytes)
     if packet4a == packet4 :
         print("these two Resultpackage are same")
-<<<<<<< HEAD
-<<<<<<< HEAD
     else:
         print("wrong")
     
@@ -80,17 +84,7 @@ def basicUnitTest():
         elif isinstance(pkt, Decodepackage): print('decode color')
         elif isinstance(pkt, Resultpackage): print('pass fail')
         else: print("none")
-# i = 0
+
 if __name__ == "__main__":
     basicUnitTest()
-=======
-
-
-basicUnitTest()
->>>>>>> parent of 23aa43a... v3
-=======
-
-
-basicUnitTest()
->>>>>>> parent of 23aa43a... v3
 
