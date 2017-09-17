@@ -21,8 +21,7 @@ class serpass1(StackingProtocol):
     def __init__(self):
         super.__init__()
         print('pass1 init')
-        self.setHigherProtocol(serpo)
-    
+
     def connection_made(self, transport):
         print('pass1 connect')
         self.transport = transport
@@ -41,7 +40,6 @@ class serpass1(StackingProtocol):
 class serpass2(StackingProtocol):
     def __init__(self):
         super.__init__()
-        self.setHigherProtocol(serpass1)
         print('pass2 init')
     
     def connection_made(self, transport):
