@@ -89,8 +89,8 @@ class ClolorClientPro(asyncio.Protocol):
                 self.transport = None
                 self.loop.stop()
 
-def connection_lost(self, exc):
-    self.loop.stop()
+    def connection_lost(self, exc):
+        self.loop.stop()
         self.transport = None
         print('connection lost')
 
