@@ -104,7 +104,6 @@ class ServerPass1(StackingProtocol):
         self.higherProtocol().transport.close()
 
 
-
 class ServerPass2(StackingProtocol):
     def __init__(self):
         super().__init__
@@ -130,17 +129,17 @@ if __name__ == "__main__":
     loop = asyncio.get_event_loop()
     f = StackingProtocolFactory(lambda: ServerPass1(),
                                 lambda: ServerPass2())
-        
-                                ptConnector = playground.Connector(protocolStack=f)
-                                playground.setConnector("passthrough", ptConnector)
-                                coro = playground.getConnector('passthrough').create_playground_server(lambda : ColorServerPro(), 888)
-                                
-                                server = loop.run_until_complete(coro)
-                                print("ColorServer Started at {}".format(server.sockets[0].gethostname()))
-                                try:
-                                    loop.run_forever()
-                                except KeyboardInterrupt:
-                                    pass
+
+    ptConnector = playground.Connector(protocolStack=f)
+    playground.setConnector("passthrough", ptConnector)
+    coro = playground.getConnector('passthrough').create_playground_server(lambda : ColorServerPro(), 888)
+
+    server = loop.run_until_complete(coro)
+    print("ColorServer Started at {}".format(server.sockets[0].gethostname()))
+    try:
+        loop.run_forever()
+    except KeyboardInterrupt:
+        pass
 
     server.close()
     loop.close()

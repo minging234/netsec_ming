@@ -52,8 +52,8 @@ class ClolorClientPro(asyncio.Protocol):
         else:
             self.callback = print
 
-def sendfirst(self):
-    packet1 = RequestColorpackage()
+    def sendfirst(self):
+        packet1 = RequestColorpackage()
         packet1a = packet1.__serialize__()
         self.state = 'r_colorcode'
         self.transport.write(packet1a)
@@ -61,17 +61,17 @@ def sendfirst(self):
     def setcolorR(self, cdata):
         self.vlue1 = cdata
 
-def setcolorG(self, cdata):
-    self.vlue2 = cdata
-    
+    def setcolorG(self, cdata):
+        self.vlue2 = cdata
+
     def setcolorB(self, cdata):
         self.vlue3 = cdata
-    
+
     def connection_made(self, transport):
         self.transport = transport
         self.state = 'connected'
         print('make connection')
-    
+
     def data_received(self, data):
         deserializer = PacketType.Deserializer()
         deserializer.update(data)
@@ -101,8 +101,8 @@ def setcolorG(self, cdata):
                 self.transport = None
                 self.loop.stop()
 
-def connection_lost(self, exc):
-    self.loop.stop()
+    def connection_lost(self, exc):
+        self.loop.stop()
         self.transport = None
         print('connection lost')
 
