@@ -9,7 +9,7 @@ class RequestColorpackage(PacketType):
     DEFINITION_IDENTIFIER = "lab2b.student_xym.Requestcolorpackage"
     DEFINITION_VERSION = "1.0"
     FIELDS = [
-]
+        ]
 
 
 class ColorCodepackage(PacketType):
@@ -17,7 +17,7 @@ class ColorCodepackage(PacketType):
     DEFINITION_VERSION = "1.0"
     FIELDS = [
               ("ID", UINT8), ("colorcode", STRING)
-              ]
+        ]
 
 
 class Decodepackage(PacketType):
@@ -25,7 +25,7 @@ class Decodepackage(PacketType):
     DEFINITION_VERSION = "1.0"
     FIELDS = [
               ("ID", UINT8), ("value1", INT16), ("value2", INT16), ("value3", INT16)
-              ]
+        ]
 
 
 class Resultpackage(PacketType):
